@@ -6,9 +6,9 @@
             loaded id
             by using string interpolation
          -->
-        <p>
+        <!-- <p>
             Loaded ID: {{ id }}
-        </p>
+        </p> -->
 
         <!-- 
 
@@ -18,6 +18,9 @@
         <button class="btn btn-primary" @click="navigateToHome">
             Go to Home
         </button>
+
+        <hr>
+        <router-view></router-view>
     </div>
 </template>
 
@@ -45,11 +48,11 @@
             so, to remove such error
             we have to keep watch on the $route
        */
-        data() {
+        /* data() {
             return {
                 id: this.$route.params.id
             }
-        },
+        }, */
 
         /* 
             here we watch the $route
@@ -59,11 +62,11 @@
             whenever we click on the second user
             it will re-create the parameters
         */
-        watch: {
+        /* watch: {
             '$route'(to, from) {
                 this.id = to.params.id;
             }
-        },
+        }, */
 
         /* 
             this will push your page
@@ -71,7 +74,7 @@
         */
         methods: {
             navigateToHome() {
-                this.$router.push('/');
+                this.$router.push({ name: 'home' });
             }
         }
     }
